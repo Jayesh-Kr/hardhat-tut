@@ -170,6 +170,20 @@ npx hardhat node
 
 ---
 
+## 📌 11. How to use with wagmi
+Update wagmiConfig.js
+```javascipt
+import { createConfig, http } from "wagmi";
+import { hardhat } from "wagmi/chains";
+
+export const config = createConfig({
+  chains: [hardhat], // Use the local Hardhat chain
+  transports: {
+    [hardhat.id]: http("http://127.0.0.1:8545"), // Connect to Hardhat node
+  },
+});
+```
+
 ## 🎯 Conclusion
 This guide should help you set up, deploy, and interact with smart contracts using Hardhat while ensuring persistent blockchain data. 🚀 Happy coding!
 
